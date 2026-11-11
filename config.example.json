@@ -1,0 +1,6 @@
+{
+  "allowedPaths": ["C:\\Users\\tu-usuario"],
+  "sofficePath": "",
+  "pdftotextPath": "",
+  "note": "allowedPaths limita los archivos que el plugin puede leer/escribir. sofficePath y pdftotextPath vacíos se autodetectan (PATH y rutas habituales de LibreOffice/Git); también puedes definirlos con DSH_DOCS_SOFFICE y DSH_DOCS_PDFTOTEXT."
+}

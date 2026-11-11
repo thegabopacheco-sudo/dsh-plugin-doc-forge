@@ -1,0 +1,66 @@
+{
+  "name": "dsh-plugin-doc-forge",
+  "version": "0.1.0",
+  "description": "Toolkit de documentos para DeepSeek Harness: une, divide, rota e importa PDFs y convierte Office a PDF, con rutas permitidas y sin sobrescribir originales.",
+  "type": "module",
+  "license": "MIT",
+  "author": "thegabopacheco-sudo",
+  "homepage": "https://github.com/thegabopacheco-sudo/dsh-plugin-doc-forge#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thegabopacheco-sudo/dsh-plugin-doc-forge.git"
+  },
+  "bugs": {
+    "url": "https://github.com/thegabopacheco-sudo/dsh-plugin-doc-forge/issues"
+  },
+  "keywords": [
+    "deepseek",
+    "deepseek-harness",
+    "dsh",
+    "dsh-plugin",
+    "mcp",
+    "pdf",
+    "documents",
+    "merge",
+    "split",
+    "rotate",
+    "docx",
+    "xlsx",
+    "pptx",
+    "libreoffice"
+  ],
+  "main": "./dist/server.mjs",
+  "files": [
+    "dist/",
+    "docs/",
+    "cordis.patch.yml",
+    "config.example.json",
+    "scripts/postinstall.mjs",
+    "README.md",
+    "README.en.md",
+    "CHANGELOG.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build:bundle": "esbuild server.mjs --bundle --platform=node --format=esm --target=node20 --outfile=dist/server.mjs",
+    "prepack": "npm run build:bundle",
+    "postinstall": "node scripts/postinstall.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "devDependencies": {
+    "@modelcontextprotocol/server": "2.2.0",
+    "esbuild": "0.28.2",
+    "pdf-lib": "1.17.1",
+    "zod": "4.4.3"
+  }
+}
